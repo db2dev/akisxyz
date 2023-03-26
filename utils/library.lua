@@ -112,7 +112,7 @@ local CoreGui = game:GetService("CoreGui")
 
 -- Interface Management
 local Rayfield = game:GetObjects("rbxassetid://10804731440")[1]
-local Utils = loadstring(game:HttpGet("https://raw.githubusercontent.com/db2dev/akisxyz/main/utils/icons.lua"))()
+local utils = loadstring(game:HttpGet("https://raw.githubusercontent.com/db2dev/akisxyz/main/utils/icons.lua"))()
 
 
 if gethui then
@@ -153,7 +153,6 @@ local TabList = Main.TabList
 
 Rayfield.DisplayOrder = 100
 LoadingFrame.Version.Text = Release
-
 
 -- Variables
 
@@ -542,7 +541,7 @@ function RayfieldLibrary:Notify(NotificationSettings)
 		Notification.Description.TextColor3 = SelectedTheme.TextColor
 		Notification.Icon.ImageColor3 = SelectedTheme.TextColor
 		if NotificationSettings.Image then
-			for _,v in pairs(Utils.icons) do
+			for _,v in pairs(utils.icons) do
                 if _ == NotificationSettings.Image then
                     Notification.Icon.Image = "rbxassetid://"..NotificationSettings.Image
                 end
@@ -1160,7 +1159,7 @@ function RayfieldLibrary:CreateWindow(Settings)
 		if Image then
 			TabButton.Title.AnchorPoint = Vector2.new(0, 0.5)
 			TabButton.Title.Position = UDim2.new(0, 37, 0.5, 0)
-            for _,v in pairs(Utils.icons) do
+            for _,v in pairs(utils.icons) do
                 if _ == Image then
                     TabButton.Image.Image = "rbxassetid://"..v
                 end
