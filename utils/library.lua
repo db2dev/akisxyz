@@ -112,7 +112,7 @@ local CoreGui = game:GetService("CoreGui")
 
 -- Interface Management
 local Rayfield = game:GetObjects("rbxassetid://10804731440")[1]
-local utils = loadstring(game:HttpGet("https://raw.githubusercontent.com/db2dev/akisxyz/main/utils/icons.lua"))()
+local Utils = loadstring(game:HttpGet("https://raw.githubusercontent.com/db2dev/akisxyz/main/utils/icons.lua"))()
 
 
 if gethui then
@@ -1156,7 +1156,7 @@ function RayfieldLibrary:CreateWindow(Settings)
 		if Image then
 			TabButton.Title.AnchorPoint = Vector2.new(0, 0.5)
 			TabButton.Title.Position = UDim2.new(0, 37, 0.5, 0)
-            for _,v in pairs(utils.icons) do
+            for _,v in pairs(Utils.icons) do
                 if _ == Image then
                     TabButton.Image.Image = "rbxassetid://"..v
                 end
