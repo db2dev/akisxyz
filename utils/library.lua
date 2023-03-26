@@ -491,7 +491,7 @@ function RayfieldLibrary:Notify(NotificationSettings)
 		local ActionCompleted = true
 		local Notification = Notifications.Template:Clone()
 		Notification.Parent = Notifications
-		Notification.Name = NotificationSettings.Title or "Unknown Title"
+		Notification.Name = NotificationSettings.Title or "nigga"
 		Notification.Visible = true
 
 		local blurlight = nil
@@ -541,11 +541,7 @@ function RayfieldLibrary:Notify(NotificationSettings)
 		Notification.Description.TextColor3 = SelectedTheme.TextColor
 		Notification.Icon.ImageColor3 = SelectedTheme.TextColor
 		if NotificationSettings.Image then
-			for _,v in pairs(utils.icons) do
-				if _ == NotificationSettings.Image then
-					Notification.Icon.Image = tostring(v) 
-				end
-			end
+			Notification.Icon.Image = "rbxassetid://"..tostring(NotificationSettings.Image)
 		else
 			Notification.Icon.Image = "rbxassetid://3944680095"
 		end
