@@ -542,10 +542,10 @@ function RayfieldLibrary:Notify(NotificationSettings)
 		Notification.Icon.ImageColor3 = SelectedTheme.TextColor
 		if NotificationSettings.Image then
 			for _,v in pairs(utils.icons) do
-                if _ == NotificationSettings.Image then
-                    Notification.Icon.Image = "rbxassetid://"..NotificationSettings.Image
-                end
-            end
+				if _ == NotificationSettings.Image then
+					Notification.Icon.Image = tostring(v) 
+				end
+			end
 		else
 			Notification.Icon.Image = "rbxassetid://3944680095"
 		end
