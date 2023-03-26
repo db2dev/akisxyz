@@ -631,14 +631,6 @@ function RayfieldLibrary:Notify(NotificationSettings)
 	end)
 end
 
-function RayfieldLibrary:GetIcon(w)
-    for _,v in pairs(utils.icons) do
-        if _ == w then
-            return string.match(v, "%d+")
-        end
-    end
-end
-
 function Hide()
 	Debounce = true
 	RayfieldLibrary:Notify({Title = "Interface Hidden", Content = "The interface has been hidden, you can unhide the interface by tapping RightShift", Duration = 7})
@@ -1152,7 +1144,7 @@ function RayfieldLibrary:CreateWindow(Settings)
 	-- Tab
 	local FirstTab = false
 	local Window = {}
-	function Window:CreateTab(Name,Image)
+	function Window:CreateTab(Name, Image)
 		local SDone = false
 		local TabButton = TabList.Template:Clone()
 		TabButton.Name = Name
@@ -1160,11 +1152,15 @@ function RayfieldLibrary:CreateWindow(Settings)
 		TabButton.Parent = TabList
 		TabButton.Title.TextWrapped = false
 		TabButton.Size = UDim2.new(0, TabButton.Title.TextBounds.X + 30, 0, 30)
-		
+
 		if Image then
 			TabButton.Title.AnchorPoint = Vector2.new(0, 0.5)
 			TabButton.Title.Position = UDim2.new(0, 37, 0.5, 0)
-			TabButton.Image.Image = "rbxassetid://"..Image
+            for _,v in pairs(utils.icons) do
+                if _ == Image then
+                    TabButton.Image.Image = "rbxassetid://"..v
+                end
+            end
 			TabButton.Image.Visible = true
 			TabButton.Title.TextXAlignment = Enum.TextXAlignment.Left
 			TabButton.Size = UDim2.new(0, TabButton.Title.TextBounds.X + 46, 0, 30)
