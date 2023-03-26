@@ -1157,7 +1157,7 @@ function RayfieldLibrary:CreateWindow(Settings)
 			TabButton.Title.Position = UDim2.new(0, 37, 0.5, 0)
             for _,v in pairs(utils.icons) do
                 if _ == Image then
-                    TabButton.Image.Image = "rbxassetid://"..v
+                    TabButton.Image.Image = tostring(v)
                 end
             end
 			TabButton.Image.Visible = true
