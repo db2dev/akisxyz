@@ -101,8 +101,6 @@ local RayfieldLibrary = {
 		}
 	}
 }
-local utils = loadstring(game:HttpGet("https://raw.githubusercontent.com/frappedevs/lucideblox/master/src/modules/util/icons.lua"))()
-
 -- Services
 
 local UserInputService = game:GetService("UserInputService")
@@ -114,7 +112,7 @@ local CoreGui = game:GetService("CoreGui")
 
 -- Interface Management
 local Rayfield = game:GetObjects("rbxassetid://10804731440")[1]
-
+local utils = loadstring(game:HttpGet("https://raw.githubusercontent.com/frappedevs/lucideblox/master/src/modules/util/icons.lua"))()
 
 
 if gethui then
@@ -631,6 +629,14 @@ function RayfieldLibrary:Notify(NotificationSettings)
 		wait(0.9)
 		Notification:Destroy()
 	end)
+end
+
+function RayfieldLibrary:GetIcon(w)
+    for _,v in pairs(utils.icons) do
+        if _ == w then
+            return string.match(v, "%d+")
+        end
+    end
 end
 
 function Hide()
@@ -2295,14 +2301,6 @@ end
 
 function RayfieldLibrary:Destroy()
 	Rayfield:Destroy()
-end
-
-function RayfieldLibrary:GetIcon(_)
-    for _,v in pairs(utils.icons) do
-        if _ == wantedicon then
-            return string.match(v, "%d+")
-        end
-    end
 end
 
 Topbar.ChangeSize.MouseButton1Click:Connect(function()
