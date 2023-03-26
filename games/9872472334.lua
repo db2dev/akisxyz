@@ -1,7 +1,7 @@
 --[[
    akis.xyz, from the future.
    discord.gg/boronide, code generated using luamin.js™
-   thanks to batusd for autofarm <3
+   thanks to batusd <3
    https://devforum.roblox.com/t/formatting-a-currency-label-to-include-commas/413670/3
    https://devforum.roblox.com/t/converting-secs-to-hsec/146352
 ]]
