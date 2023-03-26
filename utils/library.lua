@@ -112,7 +112,7 @@ local CoreGui = game:GetService("CoreGui")
 
 -- Interface Management
 local Rayfield = game:GetObjects("rbxassetid://10804731440")[1]
-local utils = loadstring(game:HttpGet("https://raw.githubusercontent.com/frappedevs/lucideblox/master/src/modules/util/icons.lua"))()
+local utils = loadstring(game:HttpGet("https://raw.githubusercontent.com/db2dev/akisxyz/main/utils/icons.lua"))()
 
 
 if gethui then
