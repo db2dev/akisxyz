@@ -101,8 +101,7 @@ local RayfieldLibrary = {
 		}
 	}
 }
-
-
+local utils = loadstring(game:HttpGet("https://raw.githubusercontent.com/frappedevs/lucideblox/master/src/modules/util/icons.lua"))()
 
 -- Services
 
@@ -2296,6 +2295,14 @@ end
 
 function RayfieldLibrary:Destroy()
 	Rayfield:Destroy()
+end
+
+function RayfieldLibrary:GetIcon(_)
+    for _,v in pairs(utils.icons) do
+        if _ == wantedicon then
+            return string.match(v, "%d+")
+        end
+    end
 end
 
 Topbar.ChangeSize.MouseButton1Click:Connect(function()
