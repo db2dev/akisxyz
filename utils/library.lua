@@ -10,7 +10,7 @@ iRay  | Programming
 
 
 
-local Release = "akis.xyz v0.1"
+local Release = "akis.xyz v0.2"
 local NotificationDuration = 6.5
 local RayfieldFolder = "Rayfield"
 local ConfigurationFolder = RayfieldFolder.."/Configurations"
@@ -149,7 +149,13 @@ local Main = Rayfield.Main
 local Topbar = Main.Topbar
 local Elements = Main.Elements
 local LoadingFrame = Main.LoadingFrame
-local TabList = Main.TabList
+local TopList = Main.TabList
+local SideList = Main.SideTabList.Holder
+local TabsList = TopList and SideList
+local SearchBar = Main.Searchbar
+local Filler = SearchBar.CanvasGroup.Filler
+local Prompt = Main.Prompt
+local NotePrompt = Main.NotePrompt
 
 Rayfield.DisplayOrder = 100
 LoadingFrame.Version.Text = Release
